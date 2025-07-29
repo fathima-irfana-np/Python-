@@ -1,0 +1,59 @@
+def find_kth_smallest(arr, k):
+    if k > len(arr):
+        return "The clue k should be smaller than or equal to the list size"
+    
+    sorted_arr = sorted(arr)
+    
+    return sorted_arr[k-1]
+
+if __name__ == "__main__":
+    arr = list(map(int, input().split()))
+    k = int(input())
+    result = find_kth_smallest(arr, k)
+    print(result)
+
+
+
+def delete_elements(lst, item):
+    if not lst:  # Check if the list is empty
+        return []
+    if lst[0] == item:  # If the first element is the item to delete
+        return delete_elements(lst[1:], item)  # Recursively call with the rest of the list
+    else:
+        return [lst[0]] + delete_elements(lst[1:], item)  # Keep the first element and recurse with the rest
+
+
+
+
+
+
+
+
+def decimal_to_binary(n):
+    if n == 0:
+        return ""
+    return decimal_to_binary(n // 2) + str(n % 2)
+
+if __name__ == "__main__":
+    n = int(input())
+    binary_representation = decimal_to_binary(n)
+    
+    if n == 0:
+        binary_representation = "0"
+    
+    print(binary_representation)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

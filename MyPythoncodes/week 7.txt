@@ -1,0 +1,68 @@
+def rotate_matrix(matrix, m, n):
+    result = [[0] * m for _ in range(n)]
+    for i in range(m):
+        for j in range(n):
+            result[j][m - 1 - i] = matrix[i][j]
+    return result
+
+m, n = map(int, input().split())
+matrix = [list(map(int, input().split())) for _ in range(m)]
+
+rotated_matrix = rotate_matrix(matrix, m, n)
+for row in rotated_matrix:
+    print(*row)
+
+
+
+
+
+
+
+def is_magic_square(matrix, n):
+    M = (n * (n**2 + 1)) // 2
+    
+    for row in matrix:
+        if sum(row) != M:
+            return "Not a Magic Matrix"
+    
+    for col in range(n):
+        col_sum = sum(matrix[row][col] for row in range(n))
+        if col_sum != M:
+            return "Not a Magic Matrix"
+    
+    diag1_sum = sum(matrix[i][i] for i in range(n))
+    diag2_sum = sum(matrix[i][n - 1 - i] for i in range(n))
+    
+    if diag1_sum != M or diag2_sum != M:
+        return "Not a Magic Matrix"
+    
+    return "Magic Matrix"
+
+n = int(input())
+matrix = [list(map(int, input().split())) for _ in range(n)]
+
+print(is_magic_square(matrix, n))
+
+
+
+
+def find_median(matrix, n, m):
+    flat_list = [matrix[i][j] for i in range(n) for j in range(m)]
+    flat_list.sort()
+    median_index = (n * m) // 2
+    return flat_list[median_index]
+
+n, m = map(int, input().split())
+matrix = [list(map(int, input().split())) for _ in range(n)]
+
+print(find_median(matrix, n, m))
+
+
+
+
+
+
+
+
+
+
