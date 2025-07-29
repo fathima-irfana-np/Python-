@@ -1,6 +1,11 @@
-string=input("enter a string")
-reverse=string[::-1]
-if(string==reverse):
-    print("palindrome")
+import sys
+umar=input("Umar: ")
+if not umar:
+    print("Ramu: You didn’t say anything, Umar!")
+    sys.exit(0)
+ramu=input("Ramu: ")
+rev=umar[::-1]
+if rev==ramu:
+    print("Umar: Ramu, You won!, Congrats!")
 else:
-    print("not palindrome")
+    print("Umar: Sorry, Your answer is wrong ! Better try well next time !")

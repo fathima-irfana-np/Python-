@@ -1,16 +1,3 @@
-import math
-print(dir(str))
-help(str.maketrans)
-# help(math.sqrt)
-rep=str.maketrans("apple","anime")
-print(rep)
 
-translation_table = str.maketrans('aN', 'zP')
-print("irfana NP".translate(translation_table))
-
-translation = str.maketrans('   ', 'abc')
-print("ab    cdef".translate(translation)) 
-
-# Remove 'a', 'b', and 'c'
-translation_tabe = str.maketrans('', '', 'abc')
-print("abcdef".translate(translation_tabe)) 
+# for i in range(1,size*2+1):
+#     dictionary[i]=0
